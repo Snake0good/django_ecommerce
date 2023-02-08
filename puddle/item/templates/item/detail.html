@@ -1,0 +1,46 @@
+{% extends 'core/base.html' %}
+
+
+{% block title %}{{ item.name }}{% endblock title %}
+
+
+{% block content %}
+<div class="grid grid-cols-4 gap-6">
+    <div class="col-span-2 object-none object-center">
+        <img src="{{ item.image.url }}" class="rounded-xl w-full h-full object-cover max-h-[500px]">
+    </div>
+
+    <div class="col-span-2 p-6 bg-slate-100 rounded-xl">
+        <h1 class="mb-6 text-3xl">{{ item.name }}</h1>
+        <p class="text-slate-500"><strong>Price: </strong>{{ item.price }}</p>
+        <p class="text-slate-500"><strong>Seller: </strong>{{ item.created_by }}</p>
+
+        {% if item.description %}
+            <p class="text-slate-700">
+                <strong class="text-slate-500">Description: {{ item.description }}</strong> <br>
+            </p>
+        {% endif %}
+        <a href="#" class="inline-block mt-6 px-6 py-3 text-lg font-semibold bg-indigo-500 text-white rounded-lg hover:bg-indigo-700">Contact Seller</a>
+    </div>
+</div>
+
+<div class="mt-6 px-6 py-12 bg-slate-100 rounded-lg shadow-xl">
+    <h2 class="mb-12 text-2xl text-center">Related Items</h2>
+
+    <div class="grid grid-cols-4 gap-5">
+        {% for item in related_items %}
+        <div class="shadow-xl rounded-xl hover:scale-105 h-[500px]">
+            <a href="{% url 'item:detail' item.id %}">
+                <div class="h-3/4 overflow-hidden">
+                    <img src="{{ item.image.url }}" class="rounded-t-xl h-full w-full object-cover"/>
+                </div>
+                <div class="h-1/4 p-6 bg-white rounded-b-xl">
+                    <h2 class="text-2xl">{{ item.name }}</h2>
+                    <p class="text-slate-500 font-semibold">Price: {{ item.price }}</p>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
