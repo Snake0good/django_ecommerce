@@ -19,34 +19,32 @@ Welcome to my Django E-Commerce Site! This project is inspired by Facebook's Mar
 
 ## Setup
 1. Clone the repository:
-git clone https://github.com/Snake0good/django-ecommerce-site.git
+`git clone https://github.com/Snake0good/django-ecommerce-site.git`
 
 
 2. Navigate to the project directory:
-cd django-ecommerce-site
+`cd django-ecommerce-site`
 
 
 3. Create a virtual environment and activate it:
-python3 -m venv env
-source env/bin/activate
+`python3 -m venv env`
+`source env/bin/activate`
 
 
 4. Install the required dependencies:
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
 
 5. Run the migrations:
-python manage.py migrate
+`python manage.py migrate`
 
 
 6. Run the development server:
-python manage.py runserver
+`python manage.py runserver`
 
 
 7. Open your browser and visit `http://localhost:8000/` to view the website.
 
-## Contributing
-If you'd like to contribute to this project, please create a pull request and I will review and merge it.
 
 ## Conclusion
 I hope this project demonstrates my skills and ability to create a comprehensive e-commerce website using Django and its various components. Thank you for taking the time to check out my project!
