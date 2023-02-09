@@ -1,12 +1,13 @@
 from django.shortcuts import render, redirect
-
+from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required
 from item.models import Category, Item
 
 from .forms import SignupForm
 
 # Create your views here.
 def index(request):
-    items = Item.objects.filter(is_sold=False)[0:6]
+    items = Item.objects.filter(is_sold=False)[0:8]
     categories = Category.objects.all()
 
     context = {
@@ -37,3 +38,9 @@ def signup(request):
     }
 
     return render(request, 'core/signup.html', context)
+
+@login_required
+def logout_view(request):
+    logout(request)
+
+    return redirect('core:index')
