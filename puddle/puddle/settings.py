@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'core', 
     'item', 
     'cloudinary_storage',
-    'dashboard'
+    'dashboard', 
+    'conversation'
 ]
 
 MIDDLEWARE = [
