@@ -5,12 +5,12 @@
 
 
 {% block content %}
-    <div class="mt-6 px-6 py-12 bg-slate-100 rounded-lg shadow-xl">
+    <div class="mt-6 px-6 py-12 bg-slate-100 rounded-lg shadow-xl xl:w-[1400px]">
         <h2 class="mb-12 text-2xl text-center">Newest Items</h2>
 
-        <div class="grid grid-cols-4 gap-5">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
             {% for item in items %}
-            <div class="shadow-xl rounded-xl hover:scale-105 h-[500px]">
+            <div class="shadow-xl rounded-xl hover:scale-105 h-fit">
                 <a href="{% url 'item:detail' item.id %}">
                     <div class="h-3/4 overflow-hidden">
                         <img src="{{ item.image.url }}" class="rounded-t-xl h-full w-full object-cover"/>
